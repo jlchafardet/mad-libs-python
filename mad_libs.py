@@ -48,7 +48,7 @@ def load_story(filename):
         filename (str): The path to the JSON file.
 
     Returns:
-        tuple: The title and story data as a JSON object.
+        tuple: The title, story content, and placeholders as a JSON object.
 
     Raises:
         FileNotFoundError: If the file does not exist.
@@ -89,11 +89,12 @@ def load_story(filename):
     stories = story_data['themes'][theme]['stories']
 
     # Randomly select a story from the chosen theme
-    story_data = random.choice(stories)
-    title = story_data['title']  # Assuming each story has a 'title' key
-    story = story_data['content']  # Assuming the story content is under 'content' key
+    selected_story = random.choice(stories)
+    title = selected_story['title']  # Get the title
+    story_content = selected_story['story']  # Get the story content
+    placeholders = selected_story['placeholders']  # Get the placeholders
 
-    return title, story
+    return title, story_content, placeholders  # Return title, story content, and placeholders
 
 def get_user_input(prompt):
     """
@@ -174,13 +175,9 @@ def main():
 
     try:
         # Load the story data from the JSON file
-        story_title, story_data = load_story(filename)  # Get title and story
-        if story_data is None:
+        story_title, story_content, placeholders = load_story(filename)  # Get title, story, and placeholders
+        if story_content is None:
             return
-
-        # Extract the story and placeholders from the story data
-        story_lines = story_data['story']
-        placeholders = story_data['placeholders']
 
         # Initialize an empty list to store the user's input
         user_inputs = []
@@ -194,9 +191,11 @@ def main():
                 print(e)
                 return
 
+        # Add a blank line before printing the story title
+        print()  # Blank line above the title
         # Replace the placeholders in the story with the user's input
-        modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
-
+        modified_story = replace_placeholders(story_content, placeholders, user_inputs)
+        
         # Print the story title in blue
         print(f"{LIGHT_BLUE}{story_title}{RESET_COLOR}\n")  # Print title with a blank line
 
