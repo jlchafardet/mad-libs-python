@@ -22,6 +22,9 @@ This project aims to create a Mad Libs game in Python, following a structured wo
 * Story Themes: The game now includes multiple story themes, allowing the user to choose from different story templates.
 * Word Categories: The game now includes word categories (e.g., noun, verb, adjective, etc.) to guide the user's input.
 * Input Validation: The game includes basic input validation to ensure the user enters words in the correct format.
+* Enhanced Title Presentation: The title is displayed in a styled box with top, bottom, and side borders, printed in light blue color.
+* Improved Theme Selection: The enumeration of story themes is printed in green, and the theme titles are printed in red, with a blank line added for separation.
+* Output Formatting: A blank line is printed before the story output to separate it from the last prompt.
 
 # Implementation Plan
 ======================
