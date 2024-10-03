@@ -70,10 +70,10 @@ def replace_placeholders(story, placeholders, user_inputs):
     if len(placeholders) != len(user_inputs):
         raise ValueError("Error: The number of placeholders does not match the number of user inputs.")
     index = 0
-    for line in story:
+    for i, line in enumerate(story):
         if '___' in line:
             replaced_text = user_inputs[index]
-            story[story.index(line)] = line.replace('___', f'\033[92m{replaced_text}\033[0m', 1)
+            story[i] = line.replace('___', f'\033[92m{replaced_text}\033[0m', 1)
             index += 1
     return story
 
