@@ -92,6 +92,14 @@ def main():
     """
     The main function that runs the Mad Libs game.
     """
+    # Print the game title
+    print("*************************************")
+    print("*          Mad Libs Game          *")
+    print("*************************************")
+    print()
+    print("Create a funny story by filling in the blanks!")
+    print()
+
     # Define the filename of the JSON file
     filename = 'assets/stories.json'
 
@@ -110,7 +118,7 @@ def main():
     # Loop through the placeholders and get the user's input
     for placeholder in placeholders:
         try:
-            user_input = get_user_input(placeholder['prompt'])
+            user_input = get_user_input(f"{placeholder['prompt']}: ")
             user_inputs.append(user_input)
         except ValueError as e:
             print(e)
@@ -124,7 +132,10 @@ def main():
         return
 
     # Print the completed story
+    print()
     print_story(story)
+    print()
+    print("Hope you had fun!")
 
 # Check if the script is being run directly
 if __name__ == '__main__':
