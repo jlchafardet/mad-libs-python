@@ -11,12 +11,9 @@ def get_user_input(prompt):
     return input(prompt)
 
 def replace_placeholders(story, placeholders, user_inputs):
-    # Modified to correctly replace placeholders with user input
     for i, placeholder in enumerate(placeholders):
         for j, line in enumerate(story):
-            if '___' in line:
-                story[j] = line.replace('___', user_inputs[i], 1)
-                break
+            story[j] = line.replace('___', user_inputs[i])
     return story
 
 def print_story(story):

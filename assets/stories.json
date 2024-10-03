@@ -41,16 +41,20 @@
             "prompt": "A type of vehicle (e.g., car, bike, skateboard)",
             "line": 7
         },
-        {
+ {
             "prompt": "A type of music (e.g., rock, jazz, electronic)",
             "line": 12
         },
         {
             "prompt": "A type of animal (e.g., dog, cat, bird)",
-            "line": 19
+            "line": 18
         },
         {
             "prompt": "A type of building (e.g., skyscraper, mansion, shack)",
+            "line": 20
+        },
+        {
+            "prompt": "A type of danger (e.g., gangs, corrupt cops, rogue AI)",
             "line": 24
         }
     ]
