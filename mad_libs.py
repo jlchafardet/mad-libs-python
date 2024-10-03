@@ -13,7 +13,8 @@ def get_user_input(prompt):
 def replace_placeholders(story, placeholders, user_inputs):
     for i, placeholder in enumerate(placeholders):
         for j, line in enumerate(story):
-            story[j] = line.replace('___', user_inputs[i])
+            if '___' in line and placeholder['line'] == j:
+                story[j] = line.replace('___', user_inputs[i])
     return story
 
 def print_story(story):
