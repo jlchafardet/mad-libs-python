@@ -192,6 +192,8 @@ def main():
         # Replace the placeholders in the story with the user's input
         modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
 
+        # Add a blank line before printing the modified story
+        print()  # New line for separation
         # Print the modified story
         print_story(modified_story)
 
