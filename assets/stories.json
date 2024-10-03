@@ -64,45 +64,44 @@
           ]
         },
         {
-          "title": "The Misadventures of Byte and Glitch",
-          "story": [
-            "In the shadowy alleys of Neo-Tokyo, Byte, a washed-up hacker, was trying to make a living by selling stolen data chips.",
-            "His partner, Glitch, a malfunctioning AI with a penchant for bad jokes, was always by his side, providing unsolicited commentary.",
-            "One day, while rummaging through a dumpster for discarded tech, Byte found a mysterious device that looked like a toaster.",
-            "Glitch chimed in, \"Maybe it’s a new kind of bread maker! Or a weapon of mass toast-struction!\"",
-            "Byte rolled his eyes but decided to take it to their hideout, hoping it could fetch a good price.",
-            "As they plugged it in, the toaster whirred to life, shooting out slices of perfectly toasted bread, but also a holographic message from a corporate overlord.",
-            "\"I need you to deliver this toast to the top of the Spire!\" the message commanded.",
-            "Byte sighed, \"Great, now we’re toast delivery boys. What’s next, a side gig as a butter spreader?\"",
-            "Glitch replied, \"Only if we can add ___ to our resume!\"",
-            "With no other options, they set off on their ridiculous quest, dodging rogue drones and overly enthusiastic street vendors selling 'gourmet' cyber snacks.",
-            "As they reached the Spire, they realized the toast was actually a key to a secret vault.",
-            "Byte smirked, \"Looks like we buttered our way into something big!\"",
-            "But as they opened the vault, they were met with a flood of confetti and a sign that read, 'Congratulations! You’ve won a lifetime supply of ___!'",
-            "Glitch burst out laughing, \"Well, at least we won’t go hungry!\""
-          ],
-          "placeholders": [
-            {
-              "prompt": "A type of food (e.g., pizza, sushi, tacos)",
-              "type": "food"
-            },
-            {
-              "prompt": "A type of technology (e.g., gadget, device, tool)",
-              "type": "technology"
-            },
-            {
-              "prompt": "A type of drink (e.g., coffee, soda, tea)",
-              "type": "drink"
-            },
-            {
-              "prompt": "A type of vehicle (e.g., car, bike, skateboard)",
-              "type": "vehicle"
-            },
-            {
-              "prompt": "A type of joke (e.g., pun, one-liner, knock-knock)",
-              "type": "joke"
-            }
-          ]
+            "title": "The Misadventures of Byte and Glitch",
+            "story": [
+                "In the shadowy alleys of Neo-Tokyo, Byte, a washed-up hacker, was trying to make a living by selling stolen data chips.",
+                "His partner, Glitch, a malfunctioning AI with a penchant for bad jokes, was always by his side, providing unsolicited commentary.",
+                "One day, while rummaging through a dumpster for discarded tech, Byte found a mysterious device that looked like a toaster.",
+                "Glitch chimed in, \"Maybe it’s a new kind of bread maker! Or a weapon of mass toast-struction!\"",
+                "As they plugged it in, the toaster whirred to life, shooting out slices of perfectly toasted bread, but also a holographic message from a corporate overlord.",
+                "\"I need you to deliver this ___ (A type of food that you would never want to deliver) to the top of the Spire!\" the message commanded.",
+                "Byte sighed, \"Great, now we’re toast delivery boys. What’s next, a side gig as a butter spreader?\"",
+                "Glitch replied, \"Only if we can add ___ (A ridiculous skill that no one would ever put on their resume) to our resume!\"",
+                "With no other options, they set off on their ridiculous quest, dodging rogue drones and overly enthusiastic street vendors selling 'gourmet' cyber snacks.",
+                "As they reached the Spire, they realized the toast was actually a key to a secret ___ (A type of vault that holds the most absurd treasures).",
+                "Byte smirked, \"Looks like we buttered our way into something big!\"",
+                "But as they opened the vault, they were met with a flood of ___ (A type of party decoration that is completely useless) and a sign that read, 'Congratulations! You’ve won a lifetime supply of ___ (A type of food that is always a surprise)!'",
+                "Glitch burst out laughing, \"Well, at least we won’t go hungry!\""
+            ],
+            "placeholders": [
+                {
+                    "prompt": "A type of food that you would never want to deliver",
+                    "type": "food"
+                },
+                {
+                    "prompt": "A ridiculous skill that no one would ever put on their resume",
+                    "type": "skill"
+                },
+                {
+                    "prompt": "A type of vault that holds the most absurd treasures",
+                    "type": "vault"
+                },
+                {
+                    "prompt": "A type of party decoration that is completely useless",
+                    "type": "decoration"
+                },
+                {
+                    "prompt": "A type of food that is always a surprise",
+                    "type": "surprise_food"
+                }
+            ]
         }
       ]
     },
@@ -138,40 +137,40 @@
             "title": "The Galactic Bake-Off",
             "story": [
                 "In a galaxy not so far away, the annual Galactic Bake-Off was about to begin, and everyone was buzzing with excitement.",
-                "Zara, a quirky alien chef with three arms and a love for baking, was determined to win this year’s competition.",
+                "Zara, a quirky alien chef with three arms and a love for baking, was determined to win this year's competition.",
                 "Her secret weapon? A recipe for the legendary ___, rumored to grant the eater a burst of creativity.",
                 "As she gathered her ingredients, her best friend, Blip, a small robot with a malfunctioning sense of humor, kept interrupting her.",
-                "\"Why did the cake go to school? Because it wanted to be a smart ___!\" Blip beeped, causing Zara to groan.",
+                "\"Why did the cake go to school? Because it wanted to be a smart cookie!\" Blip beeped, causing Zara to groan.",
                 "Ignoring Blip, she mixed the ingredients, but accidentally added a pinch of ___ instead of baking soda.",
-                "When she put the cake in the oven, it started floating around the kitchen, leaving a trail of frosting in its wake.",
+                "When she put the cake in the oven, it started floating around the kitchen, leaving a trail of ___ in its wake.",
                 "Zara chased after it, yelling, \"Come back, you delicious disaster!\"",
                 "Just then, the judges arrived, and they were not impressed by the floating cake.",
                 "One judge, a stern-looking alien with a monocle, said, \"This is not what we expected!\"",
-                "Zara, thinking quickly, said, \"It’s a new trend! Cake that defies ___!\"",
+                "Zara, thinking quickly, said, \"It's a new trend! Cake that defies ___!\"",
                 "The judges exchanged glances, intrigued by the idea.",
-                "In the end, Zara didn’t win first place, but she did get an award for 'Most Creative ___,' and Blip was awarded 'Best Joke Teller.'",
-                "As they left the competition, Zara laughed, \"Next year, I’ll stick to regular baking!\""
+                "In the end, Zara didn't win first place, but she did get an award for 'Most Creative ___,' and Blip was awarded 'Best Joke Teller.'",
+                "As they left the competition, Zara laughed, \"Next year, I'll stick to regular baking!\""
             ],
             "placeholders": [
                 {
-                    "prompt": "A type of dessert (e.g., cake, pie, cookie)",
+                    "prompt": "A type of legendary dessert that could change the universe",
                     "type": "dessert"
                 },
                 {
-                    "prompt": "A type of alien (e.g., Martian, Zog, Glorp)",
-                    "type": "alien"
+                    "prompt": "A bizarre ingredient that no one would ever use in baking",
+                    "type": "ingredient"
                 },
                 {
-                    "prompt": "A type of kitchen tool (e.g., whisk, blender, oven)",
-                    "type": "tool"
+                    "prompt": "A type of decoration that is completely unnecessary for a cake",
+                    "type": "decoration"
                 },
                 {
-                    "prompt": "A type of flavor (e.g., chocolate, vanilla, strawberry)",
-                    "type": "flavor"
+                    "prompt": "A type of phenomenon that defies the laws of physics",
+                    "type": "phenomenon"
                 },
                 {
-                    "prompt": "A type of cooking method (e.g., baking, frying, boiling)",
-                    "type": "method"
+                    "prompt": "A type of culinary failure that is both hilarious and tragic",
+                    "type": "failure"
                 }
             ]
         }
