@@ -14,8 +14,28 @@
 import json
 import random
 
+# Define ANSI escape codes for colors
+LIGHT_BLUE = '\033[94m'
+RESET_COLOR = '\033[0m'
+
 # Constant for placeholder
 PLACEHOLDER = '___'
+
+def print_title():
+    """
+    Prints the title of the Mad Libs game in a styled box.
+    """
+    title = "          Mad Libs Game          "
+    border_top = "╔═════════════════════════════════╗"
+    border_bottom = "╚═════════════════════════════════╝"
+    border_side = "║"
+    
+    # Center the title within the box
+    centered_title = f"{border_side}{title}{border_side}"
+    
+    print(LIGHT_BLUE + border_top)
+    print(LIGHT_BLUE + centered_title)
+    print(LIGHT_BLUE + border_bottom + RESET_COLOR)
 
 def load_story(filename):
     """
@@ -135,9 +155,7 @@ def main():
     The main function that runs the Mad Libs game.
     """
     # Print the game title
-    print("*************************************")
-    print("*          Mad Libs Game          *")
-    print("*************************************")
+    print_title()
     print()
     print("Create a funny story by filling in the blanks!")
     print()
