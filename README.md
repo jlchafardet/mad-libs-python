@@ -30,7 +30,6 @@ The following features are planned for incremental improvements:
 #### Easiest (1-3 days of development)
 
 * Word Suggestions: Provide word suggestions or hints to help users who are stuck.
-* Story Customization: Allow users to customize the story template by adding or removing blank spaces.
 * User Profiles: Implement user profiles to save and load previous stories.
 
 #### Moderate (3-7 days of development)
@@ -43,6 +42,7 @@ The following features are planned for incremental improvements:
 
 * Advanced Story Generation: Implement advanced story generation techniques, such as using machine learning algorithms to generate stories based on user input.
 * Story Sharing: Allow users to share their generated stories on social media or via email.
+* Story Customization: Allow users to customize the story template by adding or removing blank spaces.
 
 ## Getting Started
 
