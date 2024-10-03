@@ -16,6 +16,8 @@ import random
 
 # Define ANSI escape codes for colors
 LIGHT_BLUE = '\033[94m'
+GREEN = '\033[92m'
+RED = '\033[91m'
 RESET_COLOR = '\033[0m'
 
 # Constant for placeholder
@@ -70,7 +72,9 @@ def load_story(filename):
     # Ask the user to select a story theme
     print("Select a story theme:")
     for i, theme in enumerate(story_themes):
-        print(f"{i + 1}. {theme}")
+        print(f"{GREEN}{i + 1}. {RED}{theme}{RESET_COLOR}")
+
+    print()  # Add a blank line for separation
 
     while True:
         choice = input("Enter the number of your chosen theme: ")
