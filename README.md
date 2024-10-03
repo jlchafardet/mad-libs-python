@@ -1,4 +1,4 @@
-`# Mad Libs Game
+# Mad Libs Game
 ================
 
 A word game where the user has to fill in the blanks with words to create a funny story.
@@ -7,9 +7,7 @@ A word game where the user has to fill in the blanks with words to create a funn
 
 This project aims to create a Mad Libs game in Python, following a structured workflow to ensure a well-documented and maintainable codebase.
 
-## To-Do
-
-The following features are planned for the MVP version and incremental improvements:
+## Features
 
 ### MVP Version
 
@@ -18,7 +16,13 @@ The following features are planned for the MVP version and incremental improveme
 * Story Generation: A function to generate the completed story by replacing the blank spaces with the user-inputted words.
 * Story Display: A way to display the generated story to the user.
 
-### Incremental Improvements
+### Implemented Features
+
+* Validation and Error Handling: The code includes input validation and error handling to ensure the user enters words in the correct format and to handle any errors that may occur.
+
+### To-Do
+
+The following features are planned for incremental improvements:
 
 #### Easiest (1-3 days of development)
 
@@ -49,4 +53,3 @@ To be updated...
 ## License
 
 To be updated...
-`
