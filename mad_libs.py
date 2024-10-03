@@ -14,6 +14,9 @@
 import json
 import random
 
+# Constant for placeholder
+PLACEHOLDER = '___'
+
 def load_story(filename):
     """
     Loads a story from a JSON file.
@@ -47,7 +50,7 @@ def load_story(filename):
     # Ask the user to select a story theme
     print("Select a story theme:")
     for i, theme in enumerate(story_themes):
-        print(f"{i+1}. {theme}")
+        print(f"{i + 1}. {theme}")
 
     while True:
         choice = input("Enter the number of your chosen theme: ")
@@ -63,7 +66,7 @@ def load_story(filename):
     # Ask the user to select a story
     print("Select a story:")
     for i, story in enumerate(stories):
-        print(f"{i+1}. {story['title']}")
+        print(f"{i + 1}. {story['title']}")
 
     while True:
         choice = input("Enter the number of your chosen story: ")
@@ -115,12 +118,13 @@ def replace_placeholders(story, placeholders, user_inputs):
     # Check if the number of placeholders matches the number of user inputs
     if len(placeholders) != len(user_inputs):
         raise ValueError("Error: The number of placeholders does not match the number of user inputs.")
+    
     index = 0
     for i, line in enumerate(story):
         # Loop until all placeholders have been replaced
-        while '___' in line:
+        while PLACEHOLDER in line:
             replaced_text = user_inputs[index]
-            line = line.replace('___', f'\033[92m{replaced_text}\033[0m', 1)
+            line = line.replace(PLACEHOLDER, f'\033[92m{replaced_text}\033[0m', 1)
             index += 1
         story[i] = line
     return story
@@ -138,7 +142,7 @@ def print_story(story):
 
 def main():
     """
-    The main function that runs the Mad Libs game .
+    The main function that runs the Mad Libs game.
     """
     # Print the game title
     print("*************************************")
