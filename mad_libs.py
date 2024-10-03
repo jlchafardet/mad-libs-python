@@ -31,7 +31,7 @@ def load_story(filename):
     # Try to open the file and load the JSON data
     try:
         with open(filename, 'r') as file:
-            return json.load(file)
+            story_data = json.load(file)
     except FileNotFoundError:
         # Handle the case where the file does not exist
         print(f"Error: The file '{filename}' does not exist.")
@@ -40,6 +40,40 @@ def load_story(filename):
         # Handle the case where the file is not a valid JSON file
         print(f"Error: The file '{filename}' is not a valid JSON file.")
         return None
+
+    # Get the list of story themes
+    story_themes = list(story_data['themes'].keys())
+
+    # Ask the user to select a story theme
+    print("Select a story theme:")
+    for i, theme in enumerate(story_themes):
+        print(f"{i+1}. {theme}")
+
+    while True:
+        choice = input("Enter the number of your chosen theme: ")
+        if choice.isdigit() and 1 <= int(choice) <= len(story_themes):
+            theme = story_themes[int(choice) - 1]
+            break
+        else:
+            print("Error: Invalid choice. Please try again.")
+
+    # Get the list of stories for the selected theme
+    stories = story_data['themes'][theme]['stories']
+
+    # Ask the user to select a story
+    print("Select a story:")
+    for i, story in enumerate(stories):
+        print(f"{i+1}. {story['title']}")
+
+    while True:
+        choice = input("Enter the number of your chosen story: ")
+        if choice.isdigit() and 1 <= int(choice) <= len(stories):
+            story = stories[int(choice) - 1]
+            break
+        else:
+            print("Error: Invalid choice. Please try again.")
+
+    return story
 
 def get_user_input(prompt):
     """
@@ -104,7 +138,7 @@ def print_story(story):
 
 def main():
     """
-    The main function that runs the Mad Libs game.
+    The main function that runs the Mad Libs game .
     """
     # Print the game title
     print("*************************************")
@@ -122,13 +156,9 @@ def main():
     if story_data is None:
         return
 
-    # Pick a random story from the JSON file
-    story_index = random.randint(0, len(story_data['stories']) - 1)
-    story = story_data['stories'][story_index]
-
     # Extract the story and placeholders from the story data
-    story_lines = story['story']
-    placeholders = story['placeholders']
+    story_lines = story_data['story']
+    placeholders = story_data['placeholders']
 
     # Initialize an empty list to store the user's input
     user_inputs = []
