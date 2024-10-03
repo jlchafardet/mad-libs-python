@@ -23,6 +23,29 @@ This project aims to create a Mad Libs game in Python, following a structured wo
 * Word Categories: The game now includes word categories (e.g., noun, verb, adjective, etc.) to guide the user's input.
 * Input Validation: The game includes basic input validation to ensure the user enters words in the correct format.
 
+# Implementation Plan
+======================
+
+### Story Sharing
+
+* Create a function to save the generated story to a .txt file
+* Create a function to generate a text-based version of the story that can be copied and pasted
+* Add a prompt at the end of the game, asking the player if they want to save their story to a .txt file
+
+### Story Statistics
+
+* Create a dictionary to store story generation statistics (e.g., number of stories generated, most popular story themes, etc.)
+* Create a function to update the statistics dictionary each time a story is generated
+* Create a function to write the statistics dictionary to a JSON file
+
+### Word of the Day
+
+* Create a function to generate a list of random words with their corresponding parts of speech (e.g., noun, verb, adjective, etc.)
+* Add a command-line argument or special flag that, when passed to the game, triggers the word list generation
+* Store the generated word list in a JSON file
+* Create a function to select a random word from the list
+* Display the selected word to the player at the start of the game
+
 ### To-Do
 
 The following features are planned for incremental improvements:

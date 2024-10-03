@@ -1,4 +1,5 @@
 workflow.json
+plan.md
 *.pyc
 *.pyo
 *.pyd
