@@ -63,18 +63,8 @@ def load_story(filename):
     # Get the list of stories for the selected theme
     stories = story_data['themes'][theme]['stories']
 
-    # Ask the user to select a story
-    print("Select a story:")
-    for i, story in enumerate(stories):
-        print(f"{i + 1}. {story['title']}")
-
-    while True:
-        choice = input("Enter the number of your chosen story: ")
-        if choice.isdigit() and 1 <= int(choice) <= len(stories):
-            story = stories[int(choice) - 1]
-            break
-        else:
-            print("Error: Invalid choice. Please try again.")
+    # Randomly select a story from the chosen theme
+    story = random.choice(stories)
 
     return story
 
@@ -155,32 +145,37 @@ def main():
     # Define the filename of the JSON file
     filename = 'assets/stories.json'
 
-    # Load the story data from the JSON file
-    story_data = load_story(filename)
-    if story_data is None:
-        return
-
-    # Extract the story and placeholders from the story data
-    story_lines = story_data['story']
-    placeholders = story_data['placeholders']
-
-    # Initialize an empty list to store the user's input
-    user_inputs = []
-
-    # Loop through the placeholders and get the user's input
-    for placeholder in placeholders:
-        try:
-            user_input = get_user_input(f"{placeholder['prompt']}: ")
-            user_inputs.append(user_input)
-        except ValueError as e:
-            print(e)
+    try:
+        # Load the story data from the JSON file
+        story_data = load_story(filename)
+        if story_data is None:
             return
 
-    # Replace the placeholders in the story with the user's input
-    modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
+        # Extract the story and placeholders from the story data
+        story_lines = story_data['story']
+        placeholders = story_data['placeholders']
 
-    # Print the modified story
-    print_story(modified_story)
+        # Initialize an empty list to store the user's input
+        user_inputs = []
+
+        # Loop through the placeholders and get the user's input
+        for placeholder in placeholders:
+            try:
+                user_input = get_user_input(f"{placeholder['prompt']}: ")
+                user_inputs.append(user_input)
+            except ValueError as e:
+                print(e)
+                return
+
+        # Replace the placeholders in the story with the user's input
+        modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
+
+        # Print the modified story
+        print_story(modified_story)
+
+    except KeyboardInterrupt:
+        print("\nGame interrupted. Exiting...")
+        return
 
 if __name__ == "__main__":
     main()
