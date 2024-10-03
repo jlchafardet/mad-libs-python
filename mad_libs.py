@@ -14,9 +14,20 @@ def load_story(filename):
 
     Returns:
         dict: The story data as a JSON object.
+
+    Raises:
+        FileNotFoundError: If the file does not exist.
+        json.JSONDecodeError: If the file is not a valid JSON file.
     """
-    with open(filename, 'r') as file:
-        return json.load(file)
+    try:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' does not exist.")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: The file '{filename}' is not a valid JSON file.")
+        return None
 
 # Define a function to get user input
 def get_user_input(prompt):
@@ -28,8 +39,16 @@ def get_user_input(prompt):
 
     Returns:
         str: The user's input.
+
+    Raises:
+        ValueError: If the user enters an empty string.
     """
-    return input(prompt)
+    while True:
+        user_input = input(prompt)
+        if user_input.strip() != "":
+            return user_input
+        else:
+            print("Error: Please enter a non-empty string.")
 
 # Define a function to replace placeholders in the story with user input
 def replace_placeholders(story, placeholders, user_inputs):
@@ -43,7 +62,12 @@ def replace_placeholders(story, placeholders, user_inputs):
 
     Returns:
         list: The modified story with placeholders replaced.
+
+    Raises:
+        ValueError: If the number of placeholders does not match the number of user inputs.
     """
+    if len(placeholders) != len(user_inputs):
+        raise ValueError("Error: The number of placeholders does not match the number of user inputs.")
     index = 0
     for line in story:
         if '___' in line:
@@ -73,6 +97,8 @@ def main():
 
     # Load the story data from the JSON file
     story_data = load_story(filename)
+    if story_data is None:
+        return
 
     # Extract the story and placeholders from the story data
     story = story_data['story']
@@ -83,11 +109,19 @@ def main():
 
     # Loop through the placeholders and get the user's input
     for placeholder in placeholders:
-        user_input = get_user_input(placeholder['prompt'])
-        user_inputs.append(user_input)
+        try:
+            user_input = get_user_input(placeholder['prompt'])
+            user_inputs.append(user_input)
+        except ValueError as e:
+            print(e)
+            return
 
     # Replace the placeholders in the story with the user's input
-    story = replace_placeholders(story, placeholders, user_inputs)
+    try:
+        story = replace_placeholders(story, placeholders, user_inputs)
+    except ValueError as e:
+        print(e)
+        return
 
     # Print the completed story
     print_story(story)
