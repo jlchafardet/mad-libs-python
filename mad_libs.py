@@ -108,34 +108,37 @@ def main():
     if story_data is None:
         return
 
-    # Extract the story and placeholders from the story data
-    story = story_data['story']
-    placeholders = story_data['placeholders']
+    # Loop through each story in the JSON file
+    for story in story_data['stories']:
+        # Extract the story and placeholders from the story data
+        story_lines = story['story']
+        placeholders = story['placeholders']
 
-    # Initialize an empty list to store the user's input
-    user_inputs = []
+        # Initialize an empty list to store the user's input
+        user_inputs = []
 
-    # Loop through the placeholders and get the user's input
-    for placeholder in placeholders:
+        # Loop through the placeholders and get the user's input
+        for placeholder in placeholders:
+            try:
+                user_input = get_user_input(f"{placeholder['prompt']}: ")
+                user_inputs.append(user_input)
+            except ValueError as e:
+                print(e)
+                return
+
+        # Replace the placeholders in the story with the user's input
         try:
-            user_input = get_user_input(f"{placeholder['prompt']}: ")
-            user_inputs.append(user_input)
+            story_lines = replace_placeholders(story_lines, placeholders, user_inputs)
         except ValueError as e:
             print(e)
             return
 
-    # Replace the placeholders in the story with the user's input
-    try:
-        story = replace_placeholders(story, placeholders, user_inputs)
-    except ValueError as e:
-        print(e)
-        return
-
-    # Print the completed story
-    print()
-    print_story(story)
-    print()
-    print("Hope you had fun!")
+        # Print the completed story
+        print()
+        print_story(story_lines)
+        print()
+        print("Hope you had fun!")
+        print()
 
 # Check if the script is being run directly
 if __name__ == '__main__':
