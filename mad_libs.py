@@ -1,3 +1,12 @@
+# Author: José Luis Chafardet G.
+# Email: jose.chafardet@icloud.com
+# Github: https://github.com/jlchafardet
+#
+# File Name: mad_libs.py
+# Description: A Mad Libs game in Python.
+# Created: Wednesday, October 2, 2024
+# Last Modified: Thursday, October 3, 2024
+
 # Mad Libs Game
 #================
 
@@ -5,7 +14,6 @@
 import json
 import random
 
-# Define a function to load a story from a JSON file
 def load_story(filename):
     """
     Loads a story from a JSON file.
@@ -20,17 +28,19 @@ def load_story(filename):
         FileNotFoundError: If the file does not exist.
         json.JSONDecodeError: If the file is not a valid JSON file.
     """
+    # Try to open the file and load the JSON data
     try:
         with open(filename, 'r') as file:
             return json.load(file)
     except FileNotFoundError:
+        # Handle the case where the file does not exist
         print(f"Error: The file '{filename}' does not exist.")
         return None
     except json.JSONDecodeError:
+        # Handle the case where the file is not a valid JSON file
         print(f"Error: The file '{filename}' is not a valid JSON file.")
         return None
 
-# Define a function to get user input
 def get_user_input(prompt):
     """
     Prompts the user to enter some text.
@@ -44,14 +54,15 @@ def get_user_input(prompt):
     Raises:
         ValueError: If the user enters an empty string.
     """
+    # Loop until the user enters a non-empty string
     while True:
         user_input = input(prompt)
         if user_input.strip() != "":
             return user_input
         else:
+            # Handle the case where the user enters an empty string
             print("Error: Please enter a non-empty string.")
 
-# Define a function to replace placeholders in the story with user input
 def replace_placeholders(story, placeholders, user_inputs):
     """
     Replaces placeholders in the story with user input.
@@ -67,17 +78,19 @@ def replace_placeholders(story, placeholders, user_inputs):
     Raises:
         ValueError: If the number of placeholders does not match the number of user inputs.
     """
+    # Check if the number of placeholders matches the number of user inputs
     if len(placeholders) != len(user_inputs):
         raise ValueError("Error: The number of placeholders does not match the number of user inputs.")
     index = 0
     for i, line in enumerate(story):
+        # Loop until all placeholders have been replaced
         while '___' in line:
             replaced_text = user_inputs[index]
             line = line.replace('___', f'\033[92m{replaced_text}\033[0m', 1)
             index += 1
         story[i] = line
     return story
-# Define a function to print the story
+
 def print_story(story):
     """
     Prints the story to the console.
@@ -85,10 +98,10 @@ def print_story(story):
     Args:
         story (list): The story as a list of strings.
     """
+    # Loop through the story and print each line
     for line in story:
         print(line)
 
-# Define the main function
 def main():
     """
     The main function that runs the Mad Libs game.
@@ -130,19 +143,10 @@ def main():
             return
 
     # Replace the placeholders in the story with the user's input
-    try:
-        story_lines = replace_placeholders(story_lines, placeholders, user_inputs)
-    except ValueError as e:
-        print(e)
-        return
+    modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
 
-    # Print the completed story
-    print()
-    print_story(story_lines)
-    print()
-    print("Hope you had fun!")
+    # Print the modified story
+    print_story(modified_story)
 
-# Check if the script is being run directly
-if __name__ == '__main__':
-    # Run the main function
+if __name__ == "__main__":
     main()
