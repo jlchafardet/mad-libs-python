@@ -48,7 +48,7 @@ def load_story(filename):
         filename (str): The path to the JSON file.
 
     Returns:
-        dict: The story data as a JSON object.
+        tuple: The title and story data as a JSON object.
 
     Raises:
         FileNotFoundError: If the file does not exist.
@@ -89,9 +89,11 @@ def load_story(filename):
     stories = story_data['themes'][theme]['stories']
 
     # Randomly select a story from the chosen theme
-    story = random.choice(stories)
+    story_data = random.choice(stories)
+    title = story_data['title']  # Assuming each story has a 'title' key
+    story = story_data['content']  # Assuming the story content is under 'content' key
 
-    return story
+    return title, story
 
 def get_user_input(prompt):
     """
@@ -172,7 +174,7 @@ def main():
 
     try:
         # Load the story data from the JSON file
-        story_data = load_story(filename)
+        story_title, story_data = load_story(filename)  # Get title and story
         if story_data is None:
             return
 
@@ -195,8 +197,9 @@ def main():
         # Replace the placeholders in the story with the user's input
         modified_story = replace_placeholders(story_lines, placeholders, user_inputs)
 
-        # Add a blank line before printing the modified story
-        print()  # New line for separation
+        # Print the story title in blue
+        print(f"{LIGHT_BLUE}{story_title}{RESET_COLOR}\n")  # Print title with a blank line
+
         # Print the modified story with a width limit of 80 characters
         print_story(modified_story, width=80)
 
