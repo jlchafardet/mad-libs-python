@@ -32,7 +32,7 @@
         "This was going to be a long night, and he would have to navigate through the crowded streets of the city, avoiding the ___ that seemed to be everywhere.",
         "He would have to be careful, as the city was full of ___."
     ],
-    "placeholders ": [
+    "placeholders": [
         {"line": 2, "prompt": "A type of food (e.g., pizza, sushi, tacos)"},
         {"line": 7, "prompt": "A type of vehicle (e.g., car, bike, skateboard)"},
         {"line": 13, "prompt": "A type of music (e.g., rock, jazz, electronic)"},

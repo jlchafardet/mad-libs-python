@@ -26,7 +26,7 @@ def main():
     filename = 'assets/stories.json'
     story_data = load_story(filename)
     story = story_data['story']
-    placeholders = story_data['placeholders']
+    placeholders = story_data['placeholders ']
     user_inputs = []
     for placeholder in placeholders:
         user_input = get_user_input(placeholder['prompt'])
