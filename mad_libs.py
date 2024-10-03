@@ -144,7 +144,7 @@ def replace_placeholders(story, placeholders, user_inputs):
         story[i] = line
     return story
 
-def print_story(story, width=60):
+def print_story(story, width=80):
     """
     Prints the story to the console with a specified width.
 
@@ -197,8 +197,8 @@ def main():
 
         # Add a blank line before printing the modified story
         print()  # New line for separation
-        # Print the modified story with a width limit of 60 characters
-        print_story(modified_story, width=60)
+        # Print the modified story with a width limit of 80 characters
+        print_story(modified_story, width=80)
 
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
