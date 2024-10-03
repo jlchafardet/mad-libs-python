@@ -11,11 +11,12 @@ def get_user_input(prompt):
     return input(prompt)
 
 def replace_placeholders(story, placeholders, user_inputs):
-    for i, placeholder in enumerate(placeholders):
-        for j, line in enumerate(story):
-            if '___' in line and placeholder['line'] == j:
-                replaced_text = user_inputs[i]
-                story[j] = line.replace('___', f'\033[92m{replaced_text}\033[0m')
+    index = 0
+    for line in story:
+        if '___' in line:
+            replaced_text = user_inputs[index]
+            story[story.index(line)] = line.replace('___', f'\033[92m{replaced_text}\033[0m', 1)
+            index += 1
     return story
 
 def print_story(story):
