@@ -13,6 +13,7 @@
 # Import the json module to handle JSON data
 import json
 import random
+import textwrap  # Importing textwrap for formatting output
 
 # Define ANSI escape codes for colors
 LIGHT_BLUE = '\033[94m'
@@ -143,16 +144,18 @@ def replace_placeholders(story, placeholders, user_inputs):
         story[i] = line
     return story
 
-def print_story(story):
+def print_story(story, width=60):
     """
-    Prints the story to the console.
+    Prints the story to the console with a specified width.
 
     Args:
         story (list): The story as a list of strings.
+        width (int): The maximum width of the output text.
     """
-    # Loop through the story and print each line
+    # Loop through the story and print each line with the specified width
     for line in story:
-        print(line)
+        wrapped_text = textwrap.fill(line, width=width)
+        print(wrapped_text)
 
 def main():
     """
@@ -194,8 +197,8 @@ def main():
 
         # Add a blank line before printing the modified story
         print()  # New line for separation
-        # Print the modified story
-        print_story(modified_story)
+        # Print the modified story with a width limit of 60 characters
+        print_story(modified_story, width=60)
 
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
