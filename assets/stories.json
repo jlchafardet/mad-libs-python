@@ -34,10 +34,10 @@
     ],
     "placeholders": [
         {"line": 2, "prompt": "A type of food (e.g., pizza, sushi, tacos)"},
-        {"line": 7, "prompt": "A type of vehicle (e.g., car, bike, skateboard)"},
-        {"line": 13, "prompt": "A type of music (e.g., rock, jazz, electronic)"},
-        {"line": 19, "prompt": "A type of animal (e.g., dog, cat, bird)"},
-        {"line": 28, "prompt": "A type of building (e.g., skyscraper, mansion, shack)"},
-        {"line": 29, "prompt": "A type of danger (e.g., gangs, corrupt cops, rogue AI)"}
+        {"line": 7, "prompt": " A type of vehicle (e.g., car, bike, skateboard)"},
+        {"line": 12, "prompt": "A type of music (e.g., rock, jazz, electronic)"},
+        {"line": 18, "prompt": "A type of animal (e.g., dog, cat, bird)"},
+        {"line": 27, "prompt": "A type of building (e.g., skyscraper, mansion, shack)"},
+        {"line": 28, "prompt": "A type of danger (e.g., gangs, corrupt cops, rogue AI)"}
     ]
 }
