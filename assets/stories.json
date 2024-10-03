@@ -33,11 +33,29 @@
         "He would have to be careful, as the city was full of ___."
     ],
     "placeholders": [
-        {"line": 2, "prompt": "A type of food (e.g., pizza, sushi, tacos)"},
-        {"line": 7, "prompt": "A type of vehicle (e.g., car, bike, skateboard)"},
-        {"line": 12, "prompt": "A type of music (e.g., rock, jazz, electronic)"},
-        {"line": 19, "prompt": "A type of animal (e.g., dog, cat, bird)"},
-        {"line": 27, "prompt": "A type of building (e.g., skyscraper, mansion, shack)"},
-        {"line": 28, "prompt": "A type of danger (e.g., gangs, corrupt cops, rogue AI)"}
+        {
+            "prompt": "A type of food (e.g., pizza, sushi, tacos)",
+            "type": "food"
+        },
+        {
+            "prompt": "A type of vehicle (e.g., car, bike, skateboard)",
+            "type": "vehicle"
+        },
+        {
+            "prompt": "A type of music (e.g., rock, jazz, electronic)",
+            "type": "music"
+        },
+        {
+            "prompt": "A type of animal (e.g., dog, cat, bird)",
+            "type": "animal"
+        },
+        {
+            "prompt": "A type of building (e.g., skyscraper, mansion, shack)",
+            "type": "building"
+        },
+        {
+            "prompt": "A type of danger (e.g., gangs, corrupt cops, rogue AI)",
+            "type": "danger"
+        }
     ]
 }
