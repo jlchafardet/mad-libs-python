@@ -26,7 +26,6 @@ def main():
     filename = 'assets/stories.json'
     story_data = load_story(filename)
     story = story_data['story']
-    # Change: Removed the space from 'placeholders '
     placeholders = story_data['placeholders']
     user_inputs = []
     for placeholder in placeholders:
