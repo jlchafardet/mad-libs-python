@@ -110,7 +110,8 @@ def main():
         return
 
     # Pick a random story from the JSON file
-    story = random.choice(story_data['stories'])
+    story_index = random.randint(0, len(story_data['stories']) - 1)
+    story = story_data['stories'][story_index]
 
     # Extract the story and placeholders from the story data
     story_lines = story['story']
