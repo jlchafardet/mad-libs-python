@@ -10,10 +10,13 @@ def load_story(filename):
 def get_user_input(prompt):
     return input(prompt)
 
-def replace_placeholders(story, placeholders):
-    for placeholder in placeholders:
-        user_input = get_user_input(placeholder['prompt'])
-        story[placeholder['line']] = story[placeholder['line']].replace('___', user_input)
+def replace_placeholders(story, placeholders, user_inputs):
+    # Modified to correctly replace placeholders with user input
+    for i, placeholder in enumerate(placeholders):
+        for j, line in enumerate(story):
+            if '___' in line:
+                story[j] = line.replace('___', user_inputs[i], 1)
+                break
     return story
 
 def print_story(story):
@@ -25,7 +28,11 @@ def main():
     story_data = load_story(filename)
     story = story_data['story']
     placeholders = story_data['placeholders']
-    story = replace_placeholders(story, placeholders)
+    user_inputs = []
+    for placeholder in placeholders:
+        user_input = get_user_input(placeholder['prompt'])
+        user_inputs.append(user_input)
+    story = replace_placeholders(story, placeholders, user_inputs)
     print_story(story)
 
 if __name__ == '__main__':
